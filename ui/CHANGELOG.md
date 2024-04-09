@@ -1,5 +1,12 @@
 
 
+## [0.0.5](https://github.com/maitzeth/maitzeth-ui/compare/0.0.4...0.0.5) (2024-04-09)
+
+
+### Bug Fixes
+
+* added npm deployment ([491bcbe](https://github.com/maitzeth/maitzeth-ui/commit/491bcbe89580d341e737e42b5974e5cef7f0302b))
+
 ## 0.0.4 (2024-04-09)
 
 
