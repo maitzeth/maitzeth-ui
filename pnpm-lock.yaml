@@ -19,7 +19,7 @@ importers:
       framer-motion:
         specifier: ^11.0.25
         version: 11.0.25(react-dom@18.2.0)(react@18.2.0)
-      mz-ui:
+      maitzeth-ui:
         specifier: workspace:*
         version: link:../ui
       postcss:

@@ -1,4 +1,4 @@
-import { Switch } from 'mz-ui';
+import { Switch } from 'maitzeth-ui';
 
 function App() {
   return (
