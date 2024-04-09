@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react';
+import React, { useState, forwardRef, Fragment } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from './utils';
 
@@ -89,7 +89,7 @@ export const Switch = forwardRef<HTMLButtonElement, Props>(({
       >
         <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
           {isOn && (
-            <>
+            <Fragment>
               <motion.path
                 initial={{ rotateY: 180 }}
                 animate={{ rotateY: 0 }}
@@ -104,11 +104,11 @@ export const Switch = forwardRef<HTMLButtonElement, Props>(({
                 className="fill-slate-200"
                 d="M12.5 5a.625.625 0 0 1-.625-.625 1.252 1.252 0 0 0-1.25-1.25.625.625 0 1 1 0-1.25 1.252 1.252 0 0 0 1.25-1.25.625.625 0 1 1 1.25 0c.001.69.56 1.249 1.25 1.25a.625.625 0 1 1 0 1.25c-.69.001-1.249.56-1.25 1.25A.625.625 0 0 1 12.5 5Z"
               />
-            </>
+            </Fragment>
           )}
 
           {!isOn && (
-            <>
+            <Fragment>
               <motion.path
                 initial={{ opacity: 0, rotate: 360 }}
                 animate={{ opacity: 1, rotate: 0 }}
@@ -122,7 +122,7 @@ export const Switch = forwardRef<HTMLButtonElement, Props>(({
                 transition={{ delay: 0.1 }}
                 className="fill-sky-950" d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z"
               />
-            </>
+            </Fragment>
           )}
         </svg>
       </motion.div>

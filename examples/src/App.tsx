@@ -1,16 +1,18 @@
-import { Switch } from 'maitzeth-ui';
+import { Switch, cn } from 'maitzeth-ui';
 
 function App() {
-  const handleSwitchChange = (enabled: boolean) => {
-    console.log('Enabled switch', enabled);
-    document.documentElement.classList.toggle('dark');
-  }
-
   return (
-    <div className="bg-gray-500 p-10">
-      <Switch onChange={handleSwitchChange} />
+    <div className={cn("bg-gray-500 p-10")}>
+
+      {/* Switch Component */}
+      <Switch
+        onChange={(enabled: boolean) => {
+          console.log('Enabled switch', enabled);
+          document.documentElement.classList.toggle('dark');
+        }}
+      />
     </div>
   );
 }
 
-export default App
+export default App;
