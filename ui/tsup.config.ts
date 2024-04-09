@@ -8,7 +8,5 @@ export default defineConfig({
   format: ['esm', 'cjs'],
   minify: true,
   external: ['react'],
-  dts: true,
-  // jsxFactory: 'React.createElement',
-  // jsxFragment: 'React.Fragment',
+  dts: true
 });
