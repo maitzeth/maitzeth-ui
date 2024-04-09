@@ -1,5 +1,12 @@
 
 
+## [0.0.6](https://github.com/maitzeth/maitzeth-ui/compare/0.0.5...0.0.6) (2024-04-09)
+
+
+### Bug Fixes
+
+* adding ui readme ([3d2e521](https://github.com/maitzeth/maitzeth-ui/commit/3d2e52112471d0ee2febbc474e344103ae5af4fa))
+
 ## [0.0.5](https://github.com/maitzeth/maitzeth-ui/compare/0.0.4...0.0.5) (2024-04-09)
 
 
