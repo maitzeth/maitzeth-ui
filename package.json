@@ -5,8 +5,11 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently -n examples,ui \"pnpm -F maitzeth-ui dev\" \"pnpm -F examples dev\""
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
