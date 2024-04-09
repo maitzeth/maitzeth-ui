@@ -9,3 +9,6 @@ $ npm install maitzeth-ui
 $ pnpm add maitzeth-ui
 $ yarn add maitzeth-ui
 ```
+# Usage
+
+TODO
