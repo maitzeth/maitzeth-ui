@@ -30,21 +30,26 @@ type Props = {
   sizeClassName?: string;
   controlClassName?: string;
   variant?: keyof typeof variants;
+  onChange?: (enabled: boolean) => void;
 };
 
-const switchBaseClassName = "bg-[rgba(255,255,255,0.4)] flex justify-[flex-start] cursor-pointer border transition-all";
+const switchBaseClassName = "bg-[rgba(255,255,255,0.4)] flex justify-[flex-start] cursor-pointer border border-gray-200 transition-all";
 
 export const Switch = forwardRef<HTMLButtonElement, Props>(({
   size = 'md',
   sizeClassName,
   controlClassName,
-  variant = 'rounded'
+  variant = 'rounded',
+  onChange,
 }, ref) => {
   const [isOn, setIsOn] = useState(false);
 
   const toggleSwitch = () => {
-    setIsOn(!isOn)
-    document.documentElement.classList.toggle('dark');
+    setIsOn((prev) => {
+      const newVal = !prev;
+      onChange?.(newVal);
+      return newVal;
+    });
   };
 
   return (
@@ -55,13 +60,12 @@ export const Switch = forwardRef<HTMLButtonElement, Props>(({
       ref={ref}
       className={cn(
         switchBaseClassName,
-        "focus-visible:outline-1 focus-visible:outline-offset-0 focus-visible:outline-black-light",
+        "focus-visible:outline-1 focus-visible:outline-offset-0 focus-visible:outline-sky-950",
         sizeClass[size],
         sizeClassName,
         {
-          "justify-end border-black-light": isOn,
+          "justify-end": isOn,
           "rounded-[50px]": variant === variants.rounded,
-          "border-gray-200":  !isOn
         }
       )}
       onClick={toggleSwitch}
@@ -72,7 +76,7 @@ export const Switch = forwardRef<HTMLButtonElement, Props>(({
           controlSizeClass[size],
           controlClassName,
           {
-            "bg-black-light": isOn,
+            "bg-sky-950": isOn,
             "rounded-[40px]": variant === variants.rounded
           }
         )}
@@ -109,14 +113,14 @@ export const Switch = forwardRef<HTMLButtonElement, Props>(({
                 initial={{ opacity: 0, rotate: 360 }}
                 animate={{ opacity: 1, rotate: 0 }}
                 transition={{ delay: 0.4 }}
-                className="fill-slate-500"
+                className="fill-sky-950"
                 d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.413-1.414zM14 7h2v2h-2zM12.95 14.433l-1.414-1.413 1.413-1.415 1.415 1.414zM7 14h2v2H7zM2.98 14.364l-1.413-1.415 1.414-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.706 4.463 3.12 3.05 4.535 1.636 3.12z"
               />
               <motion.path
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 }}
-                className="fill-slate-500" d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z"
+                className="fill-sky-950" d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z"
               />
             </>
           )}
