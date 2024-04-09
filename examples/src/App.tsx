@@ -1,8 +1,8 @@
-import { Switch, cn } from 'maitzeth-ui';
+import { Switch } from 'maitzeth-ui';
 
 function App() {
   return (
-    <div className={cn("bg-gray-500 p-10")}>
+    <div className="bg-gray-500 p-10">
 
       {/* Switch Component */}
       <Switch

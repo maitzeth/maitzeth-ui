@@ -1,0 +1,25 @@
+name: Increment Version
+
+on:
+  push:
+    branches:
+      - master  # You can adjust this to your main branch name
+
+jobs:
+  increment-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # You'll need to add a step here to install dependencies if required
+
+      - name: Increment Version
+        run: npm version patch  # You can use `npm version` command to increment version as per your needs
+
+      - name: Commit Changes
+        run: |
+          git add package.json
+          git commit -m "Increment version"
+          git push
