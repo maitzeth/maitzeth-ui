@@ -1,5 +1,12 @@
 
 
+## [0.2.0](https://github.com/maitzeth/maitzeth-ui/compare/0.1.1...0.2.0) (2024-04-10)
+
+
+### Features
+
+* adding stack component and responsivness ([d447a1b](https://github.com/maitzeth/maitzeth-ui/commit/d447a1bb18e8f58e4198e6665da24d53b02066cd))
+
 ## [0.1.1](https://github.com/maitzeth/maitzeth-ui/compare/0.1.0...0.1.1) (2024-04-10)
 
 
