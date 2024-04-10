@@ -1,4 +1,4 @@
-import { Switch, Container } from 'maitzeth-ui';
+import { Switch, Container, Stack } from 'maitzeth-ui';
 import { useState } from 'react';
 
 function App() {
@@ -14,6 +14,13 @@ function App() {
             setActive(prev => !prev);
           }}
         />
+
+        <Stack as="main" direction={{ small: 'h', medium: 'v', large: 'h' }} gap={{ small: '1.5', medium: '2', large: '10' }}>
+          <p>Element</p>
+          <p>Element</p>
+          <p>Element</p>
+          <p>Element</p>
+        </Stack>
       </Container>
     </div>
   );
