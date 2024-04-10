@@ -1,5 +1,12 @@
 
 
+## [0.1.1](https://github.com/maitzeth/maitzeth-ui/compare/0.1.0...0.1.1) (2024-04-10)
+
+
+### Bug Fixes
+
+* changing switch API ([a2a5c37](https://github.com/maitzeth/maitzeth-ui/commit/a2a5c37983375475d93403097399070050110bc6))
+
 ## [0.1.0](https://github.com/maitzeth/maitzeth-ui/compare/0.0.6...0.1.0) (2024-04-10)
 
 
