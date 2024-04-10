@@ -30,7 +30,8 @@ type Props = {
   sizeClassName?: string;
   controlClassName?: string;
   variant?: keyof typeof variants;
-  onChange?: (enabled: boolean) => void;
+  onChange: () => void;
+  active: boolean;
 };
 
 const switchBaseClassName = "bg-[rgba(255,255,255,0.4)] flex justify-[flex-start] cursor-pointer border border-gray-200 transition-all";
@@ -41,22 +42,14 @@ export const Switch = forwardRef<HTMLButtonElement, Props>(({
   controlClassName,
   variant = 'rounded',
   onChange,
+  active
 }, ref) => {
-  const [isOn, setIsOn] = useState(false);
-
-  const toggleSwitch = () => {
-    setIsOn((prev) => {
-      const newVal = !prev;
-      onChange?.(newVal);
-      return newVal;
-    });
-  };
 
   return (
     <button
       type="button"
       role="switch"
-      aria-checked={isOn ? 'true' : 'false'}
+      aria-checked={active ? 'true' : 'false'}
       ref={ref}
       className={cn(
         switchBaseClassName,
@@ -64,11 +57,11 @@ export const Switch = forwardRef<HTMLButtonElement, Props>(({
         sizeClass[size],
         sizeClassName,
         {
-          "justify-end": isOn,
+          "justify-end": active,
           "rounded-[50px]": variant === variants.rounded,
         }
       )}
-      onClick={toggleSwitch}
+      onClick={onChange}
     >
       <motion.div
         className={cn(
@@ -76,7 +69,7 @@ export const Switch = forwardRef<HTMLButtonElement, Props>(({
           controlSizeClass[size],
           controlClassName,
           {
-            "bg-sky-950": isOn,
+            "bg-sky-950": active,
             "rounded-[40px]": variant === variants.rounded
           }
         )}
@@ -88,7 +81,7 @@ export const Switch = forwardRef<HTMLButtonElement, Props>(({
         }}
       >
         <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-          {isOn && (
+          {active && (
             <Fragment>
               <motion.path
                 initial={{ rotateY: 180 }}
@@ -107,7 +100,7 @@ export const Switch = forwardRef<HTMLButtonElement, Props>(({
             </Fragment>
           )}
 
-          {!isOn && (
+          {!active && (
             <Fragment>
               <motion.path
                 initial={{ opacity: 0, rotate: 360 }}
