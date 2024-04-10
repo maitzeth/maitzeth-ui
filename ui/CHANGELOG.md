@@ -1,5 +1,12 @@
 
 
+## [0.1.0](https://github.com/maitzeth/maitzeth-ui/compare/0.0.6...0.1.0) (2024-04-10)
+
+
+### Features
+
+* adding container component ([d681c8f](https://github.com/maitzeth/maitzeth-ui/commit/d681c8fd9fad1fd618e8f4c2a2dbbabfec4504b0))
+
 ## [0.0.6](https://github.com/maitzeth/maitzeth-ui/compare/0.0.5...0.0.6) (2024-04-09)
 
 
