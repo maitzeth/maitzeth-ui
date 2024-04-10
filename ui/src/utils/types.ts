@@ -1,3 +1,5 @@
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 /**
  * This alias essentially gives you a union type containing all the value types from the properties.
 *
@@ -73,3 +75,6 @@ export interface Responsive<T> {
  * @public
 */
 export type Directions = 'h' | 'v';
+
+export type Sizes = KeysOf<typeof defaultTheme.spacing>;
+export type GapProps = Responsive<Sizes>;

@@ -1,11 +1,8 @@
 import React, { createElement } from 'react';
-import defaultTheme from 'tailwindcss/defaultTheme'
-import { KeysOf, PropsWithClassName, sizeMap, Responsive, Directions } from '../utils/types';
 import { cn } from '../utils';
+import { Directions, GapProps, PropsWithClassName, Responsive, sizeMap } from '../utils/types';
 
-type Sizes = KeysOf<typeof defaultTheme.spacing>;
 type DirectionProps = Responsive<Directions>;
-type GapProps = Responsive<Sizes>;
 
 type Props<T extends React.ElementType = 'div'> = {
   as?: T;
