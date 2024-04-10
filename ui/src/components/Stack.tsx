@@ -50,7 +50,6 @@ export const Stack = <T extends React.ElementType = 'div'>(props: Props<T>) => {
   const directionClassName = directionCNGenerator(direction);
   const gapClassName = gapCNGenerator(gap);
 
-  console.log(gapClassName);
   const classNames = cn(directionClassName, gapClassName, className);
 
   return createElement(
