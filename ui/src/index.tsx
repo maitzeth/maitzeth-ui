@@ -1,7 +1,8 @@
 import './input.css';
 
 // Components
-export * from './Switch';
+export * from './components/Switch';
+export * from './components/Container';
 
 // Helpers
 export * from './utils';
