@@ -1,4 +1,4 @@
-import { Switch, Container, Stack } from 'maitzeth-ui';
+import { Switch, Container, Stack, Box } from 'maitzeth-ui';
 import { useState } from 'react';
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
           <p>Element</p>
           <p>Element</p>
         </Stack>
+        <Box />
       </Container>
     </div>
   );
