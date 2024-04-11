@@ -1,5 +1,13 @@
 
 
+## [0.3.1](https://github.com/maitzeth/maitzeth-ui/compare/0.3.0...0.3.1) (2024-04-11)
+
+
+### Bug Fixes
+
+* removing tailwind from example folder ([fef5ba4](https://github.com/maitzeth/maitzeth-ui/commit/fef5ba44b322ca44db698c379e5d25b1954570af))
+* removing tailwindcss from ui library ([d27b865](https://github.com/maitzeth/maitzeth-ui/commit/d27b865594d7a7924a2524388c5deec75b6f2c05))
+
 ## [0.3.0](https://github.com/maitzeth/maitzeth-ui/compare/0.2.0...0.3.0) (2024-04-11)
 
 
