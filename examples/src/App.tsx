@@ -18,30 +18,32 @@ function App() {
         <Stack
           as="main"
           direction={{ small: 'h', medium: 'v', large: 'h' }}
-          gap={{ small: 1.5, medium: 2, large: 10 }}
+          gap={{ small: '1.5', medium: '4', large: '12' }}
         >
           <p>Element</p>
           <p>Element</p>
           <p>Element</p>
           <p>Element</p>
         </Stack>
+        <hr />
         <Stack
           as="section"
           direction={{ small: 'h' }}
-          gap={{ small: 2 }}
+          gap={{ xsmall: '4' }}
+          itemsCenter
         >
           <div>
             <Skeleton width={100} height={100} theme="dark" rounded />
           </div>
           <Stack
-            direction={{ small: 'v' }}
-            gap={{ small: 2 }}
+            direction={{ xsmall: 'v' }}
+            gap={{ xsmall: '4' }}
           >
             <div>
-              <Skeleton width={100} height={25} theme="dark" />
+              <Skeleton width={400} height={25} theme="dark" />
             </div>
             <div>
-              <Skeleton width={100} height={25} theme="dark" />
+              <Skeleton width={400} height={25} theme="dark" />
             </div>
           </Stack>
         </Stack>

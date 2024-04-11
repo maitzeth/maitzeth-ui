@@ -11,11 +11,13 @@ type Props = {
   as?: SupportedHTMLElements;
   direction: DirectionProps;
   gap?: GapProps,
+  itemsCenter?: boolean;
 } & PropsWithClassName & PropsWithChildren;
 
 type StyledType = {
   $direction: DirectionProps;
   $gap: GapProps;
+  $itemsCenter?: Props['itemsCenter'];
 };
 
 const generateDirectionCN = (directions: DirectionProps) => {
@@ -64,13 +66,14 @@ const generateGapCN = (gap: GapProps) => {
 
 const StyledStack = styled.div<StyledType>`
   display: flex;
-
+  
+  ${props => props.$itemsCenter && 'align-items: center'};
   ${props => generateDirectionCN(props.$direction)}
   ${props => generateGapCN(props.$gap)}
 `;
 
 export const Stack = (props: Props) => {
-  const { as, children, direction, className, gap, ...rest } = props;
+  const { as, children, direction, className, gap, itemsCenter, ...rest } = props;
   const Component = as || 'div';
 
   const classNames = cn(className);
@@ -81,6 +84,7 @@ export const Stack = (props: Props) => {
       className={classNames}
       $direction={direction}
       $gap={gap}
+      $itemsCenter={itemsCenter}
       {...rest}
     >
       {children}

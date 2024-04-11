@@ -20,7 +20,7 @@ export function generateSpacingToken() {
     spacingToken[i] = `${i / 4}rem`;
   }
 
-  spacingToken['px'] = '1px';
+  spacingToken[1] = '1px';
   spacingToken[0.5] = '0.125rem';
   spacingToken[1.5] = '0.375rem';
   spacingToken[2.5] = '0.625rem';
