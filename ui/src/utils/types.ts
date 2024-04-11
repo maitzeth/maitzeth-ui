@@ -1,5 +1,4 @@
-import { generateSpacingToken } from './constants';
-import { devices } from './index';
+import { devices, generateSpacingToken } from './index';
 
 /**
  * This alias essentially gives you a union type containing all the value types from the properties.
