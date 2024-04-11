@@ -5,7 +5,8 @@ import {
   PropsWithChildren,
 } from 'react';
 import { PropsWithClassName } from '../utils/types';
-import { cn } from '../utils';
+import { devices, breakpoints } from '../utils';
+import { styled } from 'styled-components';
 
 type AsProp = 'main' | 'section' | 'div';
 
@@ -17,7 +18,7 @@ type Props = PropsWithChildren<PropsWithClassName<ContainerProps>>
 
 const defaultElement = 'div';
 
-export const Container = forwardRef<HTMLElement, Props>((props, ref) => {
+const ContainerRaw = forwardRef<HTMLElement, Props>((props, ref) => {
   const { as, children, className, ...rest } = props;
   const Element = as || defaultElement;
 
@@ -27,8 +28,26 @@ export const Container = forwardRef<HTMLElement, Props>((props, ref) => {
     {
       ...rest,
       ref,
-      className: cn('container px-4 mx-auto', className),
+      className,
     }, 
     children
   );
 });
+
+export const Container = styled(ContainerRaw)`
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media only screen and ${devices.sm} {
+    max-width: ${breakpoints.sm};
+  }
+
+  @media only screen and ${devices.md} {
+    max-width: ${breakpoints.md};
+  }
+
+  @media only screen and ${devices.lg} {
+    max-width: ${breakpoints.lg};
+  }
+`;

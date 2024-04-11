@@ -4,9 +4,10 @@ import './input.css';
 export * from './components/Switch';
 export * from './components/Container';
 export * from './components/Stack';
+export * from './components/Box';
 
 // Helpers
-export * from './utils';
+export { cn } from './utils';
 
 // Types
 export * from './utils/types';
