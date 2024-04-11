@@ -1,11 +1,12 @@
 import { styled } from 'styled-components';
+import { PropsWithClassName } from '../utils/types';
 
-type Props = {
+type Props = PropsWithClassName<{
   width: number | '100%';
   height: number;
   rounded?: boolean;
   theme: 'light' | 'dark';
-};
+}>;
 
 type StyledProps = {
   $width: Props['width'];
@@ -31,13 +32,14 @@ const StyledSkeleton = styled.div<StyledProps>`
   }
 `;
 
-export const Skeleton = ({ width, height, rounded, theme }: Props) => {
+export const Skeleton = ({ width, height, rounded, theme, className }: Props) => {
   return (
     <StyledSkeleton
       $width={width}
       $height={height}
       $rounded={rounded}
       $theme={theme}
+      className={className}
     />
   );
 };
