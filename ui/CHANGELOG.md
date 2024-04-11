@@ -1,5 +1,20 @@
 
 
+## [0.4.0](https://github.com/maitzeth/maitzeth-ui/compare/0.3.1...0.4.0) (2024-04-11)
+
+
+### Features
+
+* added an skeleton component ([291026e](https://github.com/maitzeth/maitzeth-ui/commit/291026e1cbb96f2079e3aee560da0f45f97139b6))
+
+
+### Bug Fixes
+
+* adding missing classNames in components ([4d00a61](https://github.com/maitzeth/maitzeth-ui/commit/4d00a61d970c957c3a3585d9df4c3bf86ba6e916))
+* moving spacing token generator to global utils file ([b205246](https://github.com/maitzeth/maitzeth-ui/commit/b205246ec3efe67d6299d0f067dc6723f6287ca3))
+* refactoring responsive sizes and adding horizontal align in stack ([dcad40d](https://github.com/maitzeth/maitzeth-ui/commit/dcad40df37d39923cd36d21c8bde7fd46afbe4f8))
+* removing missing dependency for tw on postcss config ([ce758fa](https://github.com/maitzeth/maitzeth-ui/commit/ce758fa61a23b2d8536f5c1e61665c26c3bba7f2))
+
 ## [0.3.1](https://github.com/maitzeth/maitzeth-ui/compare/0.3.0...0.3.1) (2024-04-11)
 
 
