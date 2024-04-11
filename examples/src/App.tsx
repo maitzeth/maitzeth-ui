@@ -1,4 +1,4 @@
-import { Switch, Container, Stack, Box } from 'maitzeth-ui';
+import { Switch, Container, Stack, Skeleton } from 'maitzeth-ui';
 import { useState } from 'react';
 
 function App() {
@@ -25,7 +25,26 @@ function App() {
           <p>Element</p>
           <p>Element</p>
         </Stack>
-        <Box />
+        <Stack
+          as="section"
+          direction={{ small: 'h' }}
+          gap={{ small: 2 }}
+        >
+          <div>
+            <Skeleton width={100} height={100} theme="dark" rounded />
+          </div>
+          <Stack
+            direction={{ small: 'v' }}
+            gap={{ small: 2 }}
+          >
+            <div>
+              <Skeleton width={100} height={25} theme="dark" />
+            </div>
+            <div>
+              <Skeleton width={100} height={25} theme="dark" />
+            </div>
+          </Stack>
+        </Stack>
       </Container>
     </div>
   );

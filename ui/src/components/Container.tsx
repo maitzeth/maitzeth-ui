@@ -5,7 +5,7 @@ import {
   PropsWithChildren,
 } from 'react';
 import { PropsWithClassName } from '../utils/types';
-import { devices, breakpoints } from '../utils';
+import { devices, breakpoints } from '../utils/constants';
 import { styled } from 'styled-components';
 
 type AsProp = 'main' | 'section' | 'div';
