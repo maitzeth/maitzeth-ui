@@ -14,12 +14,12 @@ export const cn = (...inputs: ArgumentArray) => {
 
 export const breakpoints = {
   sm: "640px",
-  md: "768px",
+  md: "641px",
   lg: "1024px",
 } as const;
 
 export const devices = {
-  sm: `(min-width: ${breakpoints.sm})`,
+  sm: `(max-width: ${breakpoints.sm})`,
   md: `(min-width: ${breakpoints.md})`,
   lg: `(min-width: ${breakpoints.lg})`
 };

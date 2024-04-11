@@ -1,60 +1,89 @@
-import React, { createElement } from 'react';
+import { PropsWithChildren } from 'react';
 import { cn } from '../utils';
-import { Directions, GapProps, PropsWithClassName, Responsive, sizeMap } from '../utils/types';
+import { Directions, PropsWithClassName, Responsive, sizeMap, sizesMap, KeysOf } from '../utils/types';
+import { styled, css } from 'styled-components';
+import type { SupportedHTMLElements } from 'styled-components';
 
 type DirectionProps = Responsive<Directions>;
+type GapProps = Responsive<KeysOf<typeof sizesMap>>;
 
-type Props<T extends React.ElementType = 'div'> = {
-  as?: T;
+type Props = {
+  as?: SupportedHTMLElements;
   direction: DirectionProps;
   gap?: GapProps,
-} & Omit<React.ComponentPropsWithRef<T>, 'as'> & PropsWithClassName;
+} & PropsWithClassName & PropsWithChildren;
 
-const directionCNGenerator = (sizes: DirectionProps) => {
+type StyledType = {
+  $direction: DirectionProps;
+  $gap: GapProps;
+};
+
+const generateDirectionCN = (directions: DirectionProps) => {
   const flexMap: Record<string, string> = {
-    h: 'row',
-    v: 'col',
+    h: 'flex-direction: row',
+    v: 'flex-direction: column',
   };
 
-  let classNames = ['flex'];
+  let classNames = [];
 
-  Object.entries(sizes).forEach(([size, direction]) => {
-    if (flexMap[direction]) {
-      const responsiveSize = sizeMap[size];
+  Object.entries(directions).forEach(([size, direction]) => {
+    const responsiveSize = sizeMap[size];
+    const directionRule = flexMap[direction];
+    if (directionRule && responsiveSize) {
 
-      classNames.push(`${responsiveSize.length > 0 ? `${responsiveSize}:` : ''}flex-${flexMap[direction]}`);
+      classNames.push(`
+        ${responsiveSize} {
+          ${directionRule};
+        }
+      `);
     }
   });
 
-  return classNames.join(' ');
-};
+  return css`${classNames.join('')}`;
+}
 
-const gapCNGenerator = (gap: GapProps) => {
-  let classNames = [''];
+const generateGapCN = (gap: GapProps) => {
+  let classNames = [];
 
-  Object.entries(gap).forEach(([size, value]) => {
+  Object.entries(gap).forEach(([size, gapSize]) => {
+    const gapValue = sizesMap[gapSize];
     const responsiveSize = sizeMap[size];
-    classNames.push(`${responsiveSize.length > 0 ? `${responsiveSize}:` : ''}gap-${value}`);
+
+    if (gapValue && responsiveSize) {
+
+      classNames.push(`
+        ${responsiveSize} {
+          gap: ${gapValue};
+        }
+      `);
+    }
   });
 
-  return classNames.join(' ');
-};
+  return css`${classNames.join('')}`;
+}
 
-export const Stack = <T extends React.ElementType = 'div'>(props: Props<T>) => {
-  const { as, children, direction, gap, className, ...rest } = props;
+const StyledStack = styled.div<StyledType>`
+  display: flex;
+
+  ${props => generateDirectionCN(props.$direction)}
+  ${props => generateGapCN(props.$gap)}
+`;
+
+export const Stack = (props: Props) => {
+  const { as, children, direction, className, gap, ...rest } = props;
   const Component = as || 'div';
 
-  const directionClassName = directionCNGenerator(direction);
-  const gapClassName = gapCNGenerator(gap);
+  const classNames = cn(className);
 
-  const classNames = cn(directionClassName, gapClassName, className);
-
-  return createElement(
-    Component,
-    {
-      className: classNames,
-      ...rest
-    },
-    children
+  return (
+    <StyledStack
+      as={Component}
+      className={classNames}
+      $direction={direction}
+      $gap={gap}
+      {...rest}
+    >
+      {children}
+    </StyledStack>
   );
 };

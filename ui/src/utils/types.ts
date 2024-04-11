@@ -1,4 +1,5 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
+import { devices } from './index';
 
 /**
  * This alias essentially gives you a union type containing all the value types from the properties.
@@ -53,9 +54,9 @@ export type Prettify<T> = {
  * @public
  */
 export const sizeMap: Record<string, string> = {
-  small: '',
-  medium: 'md',
-  large: 'lg',
+  small: `@media only screen and ${devices.sm}`,
+  medium: `@media only screen and ${devices.md}`,
+  large: `@media only screen and ${devices.lg}`,
 } as const;
 
 /**
@@ -75,6 +76,8 @@ export interface Responsive<T> {
  * @public
 */
 export type Directions = 'h' | 'v';
-
-export type Sizes = KeysOf<typeof defaultTheme.spacing>;
-export type GapProps = Responsive<Sizes>;
+// export type Sizes = KeysOf<typeof defaultTheme.spacing>;
+// export type GapProps = Responsive<Sizes>;
+export const sizesMap = {
+  ...defaultTheme.spacing
+} as const;
