@@ -5,7 +5,7 @@ function App() {
   const [active, setActive] = useState(false);
 
   return (
-    <div className="bg-gray-500 p-10">
+    <div>
       <Container as="main" aria-label="Main container">
         {/* Switch Component */}
         <Switch

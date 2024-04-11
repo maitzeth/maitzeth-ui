@@ -1,4 +1,4 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
+import { generateSpacingToken } from './constants';
 import { devices } from './index';
 
 /**
@@ -76,8 +76,12 @@ export interface Responsive<T> {
  * @public
 */
 export type Directions = 'h' | 'v';
-// export type Sizes = KeysOf<typeof defaultTheme.spacing>;
-// export type GapProps = Responsive<Sizes>;
+
+/**
+ * Serves as a handy tool for managing and standardizing spacing values within all my projects
+ *
+ * @public
+*/
 export const sizesMap = {
-  ...defaultTheme.spacing
+  ...generateSpacingToken()
 } as const;
