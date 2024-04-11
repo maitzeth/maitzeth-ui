@@ -1,5 +1,20 @@
 
 
+## [0.3.0](https://github.com/maitzeth/maitzeth-ui/compare/0.2.0...0.3.0) (2024-04-11)
+
+
+### Features
+
+* adding styled-components for styling ([a8c7629](https://github.com/maitzeth/maitzeth-ui/commit/a8c762909854df1e4e24b1c4fb03411aaf23f085))
+* moving from TailwindCSS to CSS-in-JS using styled-components ([0d691d3](https://github.com/maitzeth/maitzeth-ui/commit/0d691d3936d99c75ec14bdca5a046b6d50dee3aa))
+* styling switch to styled-components ([9b48e2e](https://github.com/maitzeth/maitzeth-ui/commit/9b48e2e97b0f9d009a5261459bfdb22098957753))
+
+
+### Bug Fixes
+
+* added types to global ([73ba269](https://github.com/maitzeth/maitzeth-ui/commit/73ba269db31672efc99bbcdb60e305cb54e071da))
+* removing unnecesary logger ([5a79066](https://github.com/maitzeth/maitzeth-ui/commit/5a7906601c5b224369aef44dac8fcc465abaee25))
+
 ## [0.2.0](https://github.com/maitzeth/maitzeth-ui/compare/0.1.1...0.2.0) (2024-04-10)
 
 
